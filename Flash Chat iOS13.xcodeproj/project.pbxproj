@@ -20,6 +20,7 @@
 		5B8993422A44971800EF7B9A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8993412A44971800EF7B9A /* FirebaseAuth */; };
 		5B8993442A44971800EF7B9A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8993432A44971800EF7B9A /* FirebaseFirestore */; };
 		5BC4469B2A449967006E870A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BC4469A2A449967006E870A /* GoogleService-Info.plist */; };
+		5BC4469F2A44C752006E870A /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4469E2A44C752006E870A /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0B628190235DF01B00E35CAF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0B62819D235F0F4D00E35CAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5BC4469A2A449967006E870A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5BC4469E2A44C752006E870A /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				0B628181235DEE8400E35CAF /* LaunchScreen.storyboard */,
 				0B628184235DEE8400E35CAF /* Info.plist */,
 				5BC4469A2A449967006E870A /* GoogleService-Info.plist */,
+				5BC4469E2A44C752006E870A /* K.swift */,
 			);
 			path = "Flash Chat iOS13";
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B62818B235DF00000E35CAF /* WelcomeViewController.swift in Sources */,
+				5BC4469F2A44C752006E870A /* K.swift in Sources */,
 				0B628177235DEE8100E35CAF /* AppDelegate.swift in Sources */,
 				0B628179235DEE8100E35CAF /* SceneDelegate.swift in Sources */,
 				0B62818F235DF01000E35CAF /* LoginViewController.swift in Sources */,

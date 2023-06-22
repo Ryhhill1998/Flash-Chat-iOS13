@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
     func loadTitleText() {
         var i = 0.0
         
-        for letter in "⚡️Flashchat" {
+        for letter in K.appName {
             Timer.scheduledTimer(withTimeInterval: 0.1 * i, repeats: false) {_ in
                 self.titleLabel.text?.append(letter)
             }
