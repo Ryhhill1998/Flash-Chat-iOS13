@@ -19,13 +19,14 @@ class WelcomeViewController: UIViewController {
     }
     
     func loadTitleText() {
-        let characters = ["⚡️", "F", "l", "a", "s", "h", "c", "h", "a", "t"]
+        var i = 0.0
         
-        for i in 0..<characters.count {
-            Timer.scheduledTimer(withTimeInterval: 0.25 * Double(i), repeats: false) { timer in
-                let currentTitleLabelText = self.titleLabel.text ?? ""
-                self.titleLabel.text = "\(currentTitleLabelText)\(characters[i])"
+        for letter in "⚡️Flashchat" {
+            Timer.scheduledTimer(withTimeInterval: 0.1 * i, repeats: false) {_ in
+                self.titleLabel.text?.append(letter)
             }
+            
+            i += 1
         }
     }
 }
