@@ -19,9 +19,12 @@ class LoginViewController: UIViewController {
         guard let email = emailTextfield.text else { return }
         guard let password = passwordTextfield.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            guard let strongSelf = self else { return }
-            strongSelf.performSegue(withIdentifier: "loginToChat", sender: self)
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                self.performSegue(withIdentifier: "loginToChat", sender: self)
+            }
         }
     }
 }
