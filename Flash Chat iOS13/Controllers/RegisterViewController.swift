@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: UIButton) {
         guard let email = emailTextfield.text else { return }
         guard let password = passwordTextfield.text else { return }
+        
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let e = error {
                 print(e)
