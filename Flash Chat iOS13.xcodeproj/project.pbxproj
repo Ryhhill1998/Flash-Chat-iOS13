@@ -21,6 +21,7 @@
 		5B8993442A44971800EF7B9A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5B8993432A44971800EF7B9A /* FirebaseFirestore */; };
 		5BC4469B2A449967006E870A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BC4469A2A449967006E870A /* GoogleService-Info.plist */; };
 		5BC4469F2A44C752006E870A /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4469E2A44C752006E870A /* K.swift */; };
+		5BC446A12A44C8C3006E870A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC446A02A44C8C3006E870A /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0B62819D235F0F4D00E35CAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5BC4469A2A449967006E870A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BC4469E2A44C752006E870A /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		5BC446A02A44C8C3006E870A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		5B929AC82A4446FA002EB0E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5BC446A02A44C8C3006E870A /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				0B628177235DEE8100E35CAF /* AppDelegate.swift in Sources */,
 				0B628179235DEE8100E35CAF /* SceneDelegate.swift in Sources */,
 				0B62818F235DF01000E35CAF /* LoginViewController.swift in Sources */,
+				5BC446A12A44C8C3006E870A /* Message.swift in Sources */,
 				0B628191235DF01B00E35CAF /* ChatViewController.swift in Sources */,
 				0B62818D235DF00B00E35CAF /* RegisterViewController.swift in Sources */,
 			);
