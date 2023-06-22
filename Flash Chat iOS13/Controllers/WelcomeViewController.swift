@@ -14,9 +14,18 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        titleLabel.text = ""
+        loadTitleText()
     }
     
-
+    func loadTitleText() {
+        let characters = ["⚡️", "F", "l", "a", "s", "h", "c", "h", "a", "t"]
+        
+        for i in 0..<characters.count {
+            Timer.scheduledTimer(withTimeInterval: 0.25 * Double(i), repeats: false) { timer in
+                let currentTitleLabelText = self.titleLabel.text ?? ""
+                self.titleLabel.text = "\(currentTitleLabelText)\(characters[i])"
+            }
+        }
+    }
 }
