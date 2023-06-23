@@ -9,7 +9,7 @@
 struct K {
     static let appName = "⚡️Flashchat"
     static let cellIdentifier = "reusableCell"
-    static let cellNibName = "messageCell"
+    static let cellNibName = "MessageCell"
     static let registerSegue = "registerToChat"
     static let loginSegue = "loginToChat"
     
