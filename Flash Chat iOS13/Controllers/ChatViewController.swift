@@ -50,7 +50,7 @@ class ChatViewController: UIViewController {
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                             let lastIndexPath = IndexPath(row: self.messages.count - 1, section: 0)
-                            self.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: false)
+                            self.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
                         }
                     }
                 }
@@ -73,6 +73,7 @@ class ChatViewController: UIViewController {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                self.messageTextfield.text = ""
             }
         }
     }
@@ -109,6 +110,7 @@ extension ChatViewController: UITableViewDataSource {
             cell.leftImageView.isHidden = true
             cell.rightImageView.isHidden = false
             cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.purple)
+            cell.label.textColor = UIColor(named: K.BrandColors.lightPurple)
         } else {
             cell.leftImageView.isHidden = false
             cell.rightImageView.isHidden = true
