@@ -49,6 +49,8 @@ class ChatViewController: UIViewController {
                         
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+                            let lastIndexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                            self.tableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: false)
                         }
                     }
                 }
@@ -83,6 +85,11 @@ class ChatViewController: UIViewController {
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
+    }
+    
+    func updateTableViewOrder() {
+        let indexPath:IndexPath = IndexPath(row:(messages.count - 1), section:0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 }
 
