@@ -21,36 +21,36 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadChats()
+        loadMessages()
         tableView.dataSource = self
         title = K.appName
         navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
     }
     
-    func loadChats() {
-        db.collection(K.FStore.collectionName).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    guard let messageSender = data[K.FStore.senderField] as? String else { return }
-                    guard let messageBody = data[K.FStore.bodyField] as? String else { return }
-                    
-                    let message = Message(
-                        sender: messageSender,
-                        body: messageBody
-                    )
-                    
-                    self.messages.append(message)
-                    
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
+    func loadMessages() {
+        db.collection(K.FStore.collectionName)
+            .addSnapshotListener { querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+                
+                self.messages = []
+                
+                for doc in documents {
+                    let data = doc.data()
+                    if let messageSender = data[K.FStore.senderField] as? String,
+                       let messageBody = data[K.FStore.bodyField] as? String {
+                        let message = Message(sender: messageSender, body: messageBody)
+                        self.messages.append(message)
+                        
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
-        }
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
