@@ -30,6 +30,7 @@ class ChatViewController: UIViewController {
     
     func loadMessages() {
         db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField, descending: false)
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error!)")
@@ -40,6 +41,7 @@ class ChatViewController: UIViewController {
                 
                 for doc in documents {
                     let data = doc.data()
+                    
                     if let messageSender = data[K.FStore.senderField] as? String,
                        let messageBody = data[K.FStore.bodyField] as? String {
                         let message = Message(sender: messageSender, body: messageBody)
@@ -62,7 +64,8 @@ class ChatViewController: UIViewController {
         
         ref = db.collection(K.FStore.collectionName).addDocument(data: [
             K.FStore.senderField: email,
-            K.FStore.bodyField: messageBody
+            K.FStore.bodyField: messageBody,
+            K.FStore.dateField: FieldValue.serverTimestamp()
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
