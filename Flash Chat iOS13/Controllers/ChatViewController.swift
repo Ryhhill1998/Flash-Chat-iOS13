@@ -73,7 +73,10 @@ class ChatViewController: UIViewController {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
-                self.messageTextfield.text = ""
+                
+                DispatchQueue.main.async {
+                    self.messageTextfield.text = ""
+                }
             }
         }
     }
